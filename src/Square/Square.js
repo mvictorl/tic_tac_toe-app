@@ -5,7 +5,7 @@ class Square extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value:null
+      value: null
     }
   }
   
@@ -15,10 +15,12 @@ class Square extends Component {
       <button 
         className="square"
         onClick={
-          () => alert('клик')
+          () => this.setState({
+            value: 'X'
+          })
         }
       >
-        {this.props.value}
+        {this.state.value}
       </button>)
   }
 }
