@@ -60,16 +60,14 @@ class Board extends Component {
   render() {
     const winner = this.calculateWinner(this.state.squares)
     let status = ''
-    let button = null
+    let button = <button className='refresh' onClick={() => window.location.reload()}>Refresh</button>
     if(winner) {
       status = 'Выиграл игрок - ' + winner
-      button = <button className='refresh' onClick={() => window.location.reload()}>Refresh</button>;
     } else if(this.state.squares.includes(null)) {
       status = 'Следующий ход игрока - ' + (this.state.xIsNext ? 'X' : 'O')
       button = null
     } else {
       status = 'Ничья...'
-      button = <button onClick={() => window.location.reload()}>Refresh</button>;
     }
 
     return (
